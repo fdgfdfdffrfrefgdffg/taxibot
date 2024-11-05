@@ -22,6 +22,4 @@ async def get_client(message: Message, bot: Bot):
     if flag:
         await bot.send_message(
         message.chat.id,
-        f"🙂 Hurmatli mijoz Sizni buyurtangiz koʻrib ciqilmoqda 🚕")
-        await message.answer("🚗🚕🚙")
-    
+        f"🙂 Hurmatli mijoz Sizni buyurtangiz koʻrib ciqilmoqda 🚕")    
