@@ -1,7 +1,7 @@
 from aiogram.types import Message
 from aiogram import Bot
 from aiogram.filters import Filter
-from config import private_groups, public_groups
+from config import private_groups, public_groups, admins, active
 from aiogram.enums import ChatMemberStatus
 from sqldata import get_taxi
 from config import inner_list
@@ -19,6 +19,14 @@ class IsPrivateGroupUser(Filter):
                 return True
         else: 
             return False
+
+class IsAdmin(Filter):
+    async def __call__(self, message: Message):
+        return message.from_user.id in admins
+
+class IsSleep(Filter):
+    async def __call__(self, message: Message):
+        return not active
 
 class IsClient(Filter):
     async def __call__(self, message: Message, bot: Bot):

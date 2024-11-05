@@ -19,7 +19,9 @@ async def get_client(message: Message, bot: Bot):
             break
     
     if flag: await message.delete()
-    if flag: await bot.send_message(
+    if flag:
+        await bot.send_message(
         message.chat.id,
-        f"⏰ {message.from_user.first_name} siz haqingizda xabar berdim. Tez orada sizga a'loqaga chiqishadi!"
-    )
+        f"🙂 Hurmatli mijoz Sizni buyurtangiz koʻrib ciqilmoqda 🚕")
+        await message.answer("🚗🚕🚙")
+    

@@ -9,6 +9,11 @@ inner_list = [
     "adam",
     "odam"
 ]
+
+admins = [5165396993, 5165396993]
+
+active = True
+
 public_groups = [
 -1002145972782,
 -1001120569166,
