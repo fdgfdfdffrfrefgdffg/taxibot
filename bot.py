@@ -11,6 +11,7 @@ from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram.dispatcher.middlewares.base import BaseMiddleware
 import logging
+
 from asyncio import run
 dp = Dispatcher()
 
@@ -53,9 +54,9 @@ async def on_command(message: Message):
 
 
 async def main():
-    # session = AiohttpSession(proxy="http://proxy.server:3128/")
-    # bot = Bot(BOT_TOKEN, session=session)
-    bot = Bot(BOT_TOKEN)
+    session = AiohttpSession(proxy="http://proxy.server:3128/")
+    bot = Bot(BOT_TOKEN, session=session)
+    # bot = Bot(BOT_TOKEN)
     logging.basicConfig(level=logging.INFO)
 
     dp.include_router(message.router)
